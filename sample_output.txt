@@ -1,8 +1,39 @@
-34 + 89 - x * y23
-cxo6y / 67z23 * 56& 34 * x
-2 + x
-catfood67.
-45)
-catfood-45
-catfood45
-cat food
+Line: x32 := 36 - y;
+x32 : IDENTIFIER
+:= : SYMBOL
+36 : NUMBER
+- : SYMBOL
+y : IDENTIFIER
+; : SYMBOL
+
+Line: if y then
+if : KEYWORD
+y : IDENTIFIER
+then : KEYWORD
+
+Line: x32 :=0; skip
+x32 : IDENTIFIER
+:= : SYMBOL
+0 : NUMBER
+; : SYMBOL
+skip : KEYWORD
+
+Line: else
+else : KEYWORD
+
+Line: whiley := 12^2;
+whiley : IDENTIFIER
+:= : SYMBOL
+12 : NUMBER
+^ : ERROR READING
+2 : NUMBER
+; : SYMBOL
+
+Line: z:= x32
+z : IDENTIFIER
+:= : SYMBOL
+x32 : IDENTIFIER
+
+Line: endif
+endif : KEYWORD
+
