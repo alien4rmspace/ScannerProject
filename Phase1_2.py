@@ -1,4 +1,14 @@
+
+#!/usr/bin/env python3
+"""
+Limp Scanner (Phase 1.2) - Damian S.
+Reads an input file and writes tokens to an output file per spec.
+Usage:
+    python scanner.py <input_file> <output_file>
+"""
+
 from dataclasses import dataclass
+
 
 SYMBOLS = {'+', '-', '*', '/', '(', ')', ':', '=', ';'}
 KEYWORDS = {"if", "then", "else", "endif", "while", "do", "endwhile", "skip"}
@@ -77,8 +87,6 @@ def main():
     except FileNotFoundError as e:
         print(f"File not found: {e.filename}", file=sys.stderr)
         sys.exit(1)
-
-
 
 if __name__ == "__main__":
     main()
