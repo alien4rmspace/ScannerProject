@@ -6,7 +6,6 @@ Usage:
     python scanner.py <input_file> <output_file>
 """
 from dataclasses import dataclass
-from typing import List
 
 SYMBOLS = {"+", "-", "*", "/", "(", ")"}
 
@@ -16,17 +15,17 @@ class Token:
     val: str
 
 class ScannerError(Exception):
-    def __init__(self, bad_char: str, position: int, tokens_so_far: List[Token]):
+    def __init__(self, bad_char: str, position: int, tokens_so_far: list[Token]):
         super().__init__(f'Bad character {bad_char!r} at position {position}')
         self.bad_char = bad_char
         self.position = position
         self.tokens_so_far = tokens_so_far
 
-def scan_line(line: str) -> List[Token]:
+def scan_line(line: str) -> list[Token]:
     """Scan a single input line and return a list of tokens.
     On encountering an invalid character, raise ScannerError containing tokens scanned so far.
     """
-    tokens: List[Token] = []
+    tokens: list[Token] = []
     i = 0
     n = len(line)
 
@@ -94,17 +93,18 @@ def main():
         with open(in_path, "r", encoding="utf-8") as fin, open(out_path, "w", encoding="utf-8") as fout:
             for raw_line in fin:
                 # Preserve original line without trailing newline for printing
-                line = raw_line.rstrip("\\n")
-                fout.write(f"Line: {line}\\n")
+                line = raw_line.rstrip("\n")
+                fout.write(f"Line: {line}\n")
                 try:
                     tokens = scan_line(line)
                     for t in tokens:
-                        fout.write(format_token(t) + "\\n")
+                        fout.write(format_token(t) + "\n")
+                    fout.write("\n")
                 except ScannerError as e:
                     # Print tokens scanned before the error, then the error message
                     for t in e.tokens_so_far:
-                        fout.write(format_token(t) + "\\n")
-                    fout.write(f'ERROR READING "{e.bad_char}"\\n')
+                        fout.write(format_token(t) + "\n")
+                    fout.write(f'ERROR READING "{e.bad_char}"\n\n')
     except FileNotFoundError as e:
         print(f"File not found: {e.filename}", file=sys.stderr)
         sys.exit(2)

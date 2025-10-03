@@ -1,9 +1,43 @@
 Line: 34 + 89 - x * y23
-\n34 : NUMBER\n+ : SYMBOL\n89 : NUMBER\n- : SYMBOL\nx : IDENTIFIER\n* : SYMBOL\ny23 : IDENTIFIER\nLine: cxo6y / 67z23 * 56& 34 * x
-\ncxo6y : IDENTIFIER\n/ : SYMBOL\n67 : NUMBER\nz23 : IDENTIFIER\n* : SYMBOL\n56 : NUMBER\nERROR READING "&"\nLine: 2 + x
-\n2 : NUMBER\n+ : SYMBOL\nx : IDENTIFIER\nLine: catfood67.
-\ncatfood67 : IDENTIFIER\nERROR READING "."\nLine: 45)
-\n45 : NUMBER\n) : SYMBOL\nLine: catfood-45
-\ncatfood : IDENTIFIER\n- : SYMBOL\n45 : NUMBER\nLine: catfood45
-\ncatfood45 : IDENTIFIER\nLine: cat food
-\ncat : IDENTIFIER\nfood : IDENTIFIER\n
+34 : NUMBER
++ : SYMBOL
+89 : NUMBER
+- : SYMBOL
+x : IDENTIFIER
+* : SYMBOL
+y23 : IDENTIFIER
+
+Line: cxo6y / 67z23 * 56& 34 * x
+cxo6y : IDENTIFIER
+/ : SYMBOL
+67 : NUMBER
+z23 : IDENTIFIER
+* : SYMBOL
+56 : NUMBER
+ERROR READING "&"
+
+Line: 2 + x
+2 : NUMBER
++ : SYMBOL
+x : IDENTIFIER
+
+Line: catfood67.
+catfood67 : IDENTIFIER
+ERROR READING "."
+
+Line: 45)
+45 : NUMBER
+) : SYMBOL
+
+Line: catfood-45
+catfood : IDENTIFIER
+- : SYMBOL
+45 : NUMBER
+
+Line: catfood45
+catfood45 : IDENTIFIER
+
+Line: cat food
+cat : IDENTIFIER
+food : IDENTIFIER
+
