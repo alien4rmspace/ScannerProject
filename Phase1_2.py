@@ -15,29 +15,30 @@ def scan_line(line: str) -> list[Token]:
 
     while i < n:
         c = line[i]
+
         if c.isspace():
             i += 1
             continue
+
         if c.isalpha():
             start = i
             while i < n and line[i].isalnum():
                 i += 1
-
             if line[start:i] in KEYWORDS:
                 tokens.append(Token("KEYWORD", line[start:i]))
             else:
                 tokens.append(Token("IDENTIFIER", line[start:i]))
-
             continue
+
         if c.isdigit():
             start = i
             while i < n and line[i].isdigit():
                 i +=1
             tokens.append(Token("NUMBER", line[start:i]))
             continue
+
         if c in SYMBOLS:
             start = i
-
             if c != ':':
                 i += 1
                 tokens.append(Token("SYMBOL", line[start:i]))
